@@ -669,20 +669,49 @@ Somila is a hardworking, dedicated individual who is able to work independently 
 </html>
 
 <script>
-function toggleJob(header) {
-  var body = header.nextElementSibling;
-  var btn = header.querySelector('.toggle-btn');
-  var isOpen = body.style.maxHeight && body.style.maxHeight !== '0px';
-  if (isOpen) {
-    body.style.maxHeight = '0';
-    btn.textContent = '+';
-    btn.style.background = 'none';
-    btn.style.borderColor = '#ccc';
-  } else {
-    body.style.maxHeight = body.scrollHeight + 'px';
-    btn.textContent = '−';
-    btn.style.background = '#feda15';
-    btn.style.borderColor = '#feda15';
-  }
-}
+  (function () {
+    const accordion = document.getElementById('xpAccordion');
+    if (!accordion) return;
+
+    const headers = Array.from(accordion.querySelectorAll('.xp-header'));
+
+    function closeItem(header) {
+      const item = header.closest('.xp-item');
+      const body = item.querySelector('.xp-body');
+      const icon = header.querySelector('.xp-icon');
+
+      header.setAttribute('aria-expanded', 'false');
+      if (icon) icon.textContent = '+';
+      if (body) body.hidden = true;
+    }
+
+    function openItem(header) {
+      const item = header.closest('.xp-item');
+      const body = item.querySelector('.xp-body');
+      const icon = header.querySelector('.xp-icon');
+
+      header.setAttribute('aria-expanded', 'true');
+      if (icon) icon.textContent = '−';
+      if (body) body.hidden = false;
+    }
+
+    headers.forEach((header) => {
+      header.addEventListener('click', () => {
+        const isOpen = header.getAttribute('aria-expanded') === 'true';
+
+        // close all first (single-open behavior)
+        headers.forEach(closeItem);
+
+        // if it was closed, open it
+        if (!isOpen) openItem(header);
+      });
+    });
+
+    // Ensure initial state (if you set one aria-expanded="true")
+    headers.forEach((header) => {
+      const isOpen = header.getAttribute('aria-expanded') === 'true';
+      if (isOpen) openItem(header);
+      else closeItem(header);
+    });
+  })();
 </script>
