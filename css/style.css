@@ -898,5 +898,121 @@ footer .copyright{
       margin: 30px;
     }
   }
-  
+  .xp-timeline{
+  margin-top: 10px;
+  display: grid;
+  gap: 12px;
+}
+
+/* Role card */
+.xp-role{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.04);
+}
+
+/* Accent bar */
+.xp-role::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width: 6px;
+  background: var(--accent);
+}
+
+/* Button row */
+.xp-toggle{
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 14px 14px 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.xp-toggle:focus{
+  outline: 3px solid rgba(254,218,21,0.35);
+  outline-offset: 2px;
+  border-radius: 14px;
+}
+
+.xp-left{
+  min-width: 0;
+}
+
+.xp-role-title{
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-transform: none; /* remove shouty all-caps */
+  line-height: 1.25;
+}
+
+.xp-sub{
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.xp-role-meta{
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.xp-company{
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.xp-dot{
+  opacity: 0.6;
+}
+
+/* Chevron */
+.xp-chevron{
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  flex-shrink: 0;
+}
+
+.xp-toggle[aria-expanded="true"] .xp-chevron{
+  transform: rotate(180deg);
+  background: rgba(254,218,21,0.18);
+  border-color: rgba(254,218,21,0.55);
+}
+
+/* Panel */
+.xp-panel{
+  border-top: 1px solid var(--line);
+  padding: 12px 14px 14px 18px;
+}
+
+.xp-bullets{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.xp-bullets li{
+  margin: 6px 0;
+  color: #111827;
+}
   
