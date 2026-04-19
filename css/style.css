@@ -6,6 +6,11 @@
     --ternary:#898989;
     --light:#F2F2F2;
     --secondary:#070606;
+	--accent: #feda15;
+  --xp-bg: #ffffff;
+  --xp-border: #e6e6e6;
+  --xp-text: #111;
+  --xp-muted: #6b7280;
 }
 
 body{
