@@ -171,75 +171,102 @@
         </div>
       </div>
  
-      <!-- Work Experience Column -->
-      <div class="col-12 col-md-6 px-5 py-4 border-start">
-        <i class="fa-solid fa-briefcase h1"></i>
-        <h3 class="ps-2 py-2 fw-semibold d-inline-block">Work Experience</h3>
- 
-        <!-- Coega -->
-        <div class="accordion-job mb-3">
-          <div class="accordion-header d-flex justify-content-between align-items-start" onclick="toggleJob(this)" style="cursor:pointer; background:#fff; border:1px solid #ddd; border-radius:8px; padding:14px 16px;">
-            <div>
-              <h5 class="mb-1" style="font-size:15px;">ICT Research Strategy Intern <span style="font-weight:400;">(Software Developer)</span></h5>
-              <span style="color:#feda15; font-weight:600;">Coega Development Corporation</span><br>
-              <small class="fst-italic text-muted">Mar 2022 – Oct 2022</small>
-            </div>
-            <button class="toggle-btn ms-3" style="background:none; border:1px solid #ccc; border-radius:6px; width:28px; height:28px; font-size:16px; cursor:pointer; flex-shrink:0;">+</button>
-          </div>
-          <div class="accordion-body" style="max-height:0; overflow:hidden; transition:max-height 0.35s ease; padding:0 16px; background:#fff; border:1px solid #ddd; border-top:none; border-radius:0 0 8px 8px;">
-            <ul style="padding: 14px 0 14px 18px; margin:0;">
-              <li>Wrote technical documentation including project objectives, ERDs, IPOs, use case diagrams, and wireframes.</li>
-              <li>Created an AI chatbot system using Power Virtual Agents.</li>
-              <li>Managed project scheduling with Microsoft Project — Gantt charts, milestones, and resource tracking.</li>
-              <li>Web development using C# ASP.Net MVC, JavaScript, HTML, and CSS.</li>
-              <li>Created and maintained databases using SQL Server.</li>
-              <li>Conducted software testing across projects.</li>
-            </ul>
+<!-- Work Experience Column -->
+<div class="col-12 col-md-6 px-5 py-4 border-start">
+  <i class="fa-solid fa-briefcase h1"></i>
+  <h3 class="ps-2 py-2 fw-semibold d-inline-block">Work Experience</h3>
+
+  <div class="xp-accordion" id="xpAccordion">
+
+    <!-- Coega -->
+    <div class="xp-item">
+      <button
+        class="xp-header"
+        type="button"
+        aria-expanded="false"
+      >
+        <div class="xp-title">
+          <h5 class="mb-1">ICT Research Strategy Intern <span class="xp-sub">(Software Developer)</span></h5>
+          <div class="xp-meta">
+            <span class="xp-company">Coega Development Corporation</span>
+            <span class="xp-dates">Mar 2022 – Oct 2022</span>
           </div>
         </div>
- 
-        <!-- The Code Group -->
-        <div class="accordion-job mb-3">
-          <div class="accordion-header d-flex justify-content-between align-items-start" onclick="toggleJob(this)" style="cursor:pointer; background:#fff; border:1px solid #ddd; border-radius:8px; padding:14px 16px;">
-            <div>
-              <h5 class="mb-1" style="font-size:15px;">Junior Developer</h5>
-              <span style="color:#feda15; font-weight:600;">The Code Group</span><br>
-              <small class="fst-italic text-muted">Nov 2022 – Jan 2023</small>
-            </div>
-            <button class="toggle-btn ms-3" style="background:none; border:1px solid #ccc; border-radius:6px; width:28px; height:28px; font-size:16px; cursor:pointer; flex-shrink:0;">+</button>
-          </div>
-          <div class="accordion-body" style="max-height:0; overflow:hidden; transition:max-height 0.35s ease; padding:0 16px; background:#fff; border:1px solid #ddd; border-top:none; border-radius:0 0 8px 8px;">
-            <ul style="padding: 14px 0 14px 18px; margin:0;">
-              <li>Fixed and resolved bugs across the system to maintain stability.</li>
-              <li>Provided developer support by meeting with clients via phone calls and AnyDesk to demonstrate system functionality.</li>
-              <li>Collaborated with senior developers and business analysts to maintain and improve the codebase.</li>
-            </ul>
-          </div>
-        </div>
- 
-        <!-- ITB Software -->
-        <div class="accordion-job mb-3">
-          <div class="accordion-header d-flex justify-content-between align-items-start" onclick="toggleJob(this)" style="cursor:pointer; background:#fff; border:1px solid #ddd; border-radius:8px; padding:14px 16px;">
-            <div>
-              <h5 class="mb-1" style="font-size:15px;">Software Developer</h5>
-              <span style="color:#feda15; font-weight:600;">ITB Software</span><br>
-              <small class="fst-italic text-muted">Feb 2023 – Present</small>
-            </div>
-            <button class="toggle-btn ms-3" style="background:none; border:1px solid #ccc; border-radius:6px; width:28px; height:28px; font-size:16px; cursor:pointer; flex-shrink:0;">+</button>
-          </div>
-          <div class="accordion-body" style="max-height:0; overflow:hidden; transition:max-height 0.35s ease; padding:0 16px; background:#fff; border:1px solid #ddd; border-top:none; border-radius:0 0 8px 8px;">
-            <ul style="padding: 14px 0 14px 18px; margin:0;">
-              <li>Developed and maintained data-driven web applications using Vue.js and Node.js.</li>
-              <li>Built RESTful APIs and integrated frontend systems with backend services.</li>
-              <li>Designed and optimized PostgreSQL databases for performance.</li>
-              <li>Implemented filtering, pagination, and reporting features.</li>
-              <li>Debugged and resolved system issues across frontend and backend.</li>
-              <li>Collaborated with clients and team members to deliver functional solutions.</li>
-            </ul>
-          </div>
-        </div>
- 
+
+        <span class="xp-icon" aria-hidden="true">+</span>
+      </button>
+
+      <div class="xp-body" hidden>
+        <ul class="xp-list">
+          <li>Wrote technical documentation: objectives & scope, ERDs, IPOs, use case diagrams/descriptions, and wireframes.</li>
+          <li>Created an AI chatbot using Power Virtual Agents.</li>
+          <li>Managed schedules in Microsoft Project (Gantt charts, milestones, resources, progress tracking).</li>
+          <li>Built web features using C# ASP.NET MVC, JavaScript, HTML, and CSS.</li>
+          <li>Created and maintained databases using SQL Server.</li>
+          <li>Performed testing across projects.</li>
+        </ul>
       </div>
+    </div>
+
+    <!-- The Code Group -->
+    <div class="xp-item">
+      <button
+        class="xp-header"
+        type="button"
+        aria-expanded="false"
+      >
+        <div class="xp-title">
+          <h5 class="mb-1">Junior Developer</h5>
+          <div class="xp-meta">
+            <span class="xp-company">The Code Group</span>
+            <span class="xp-dates">Nov 2022 – Jan 2023</span>
+          </div>
+        </div>
+
+        <span class="xp-icon" aria-hidden="true">+</span>
+      </button>
+
+      <div class="xp-body" hidden>
+        <ul class="xp-list">
+          <li>Fixed and resolved bugs across the system to maintain stability.</li>
+          <li>Provided developer support to clients via calls and AnyDesk.</li>
+          <li>Worked with senior developers and BAs to maintain and improve the codebase.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ITB Software -->
+    <div class="xp-item">
+      <button
+        class="xp-header"
+        type="button"
+        aria-expanded="true"
+      >
+        <div class="xp-title">
+          <h5 class="mb-1">Software Developer</h5>
+          <div class="xp-meta">
+            <span class="xp-company">ITB Software</span>
+            <span class="xp-dates">Feb 2023 – Present</span>
+          </div>
+        </div>
+
+        <span class="xp-icon" aria-hidden="true">−</span>
+      </button>
+
+      <div class="xp-body">
+        <ul class="xp-list">
+          <li>Developed and maintained data-driven web applications using Vue.js and Node.js.</li>
+          <li>Built RESTful APIs and integrated frontend systems with backend services.</li>
+          <li>Designed and optimized PostgreSQL databases for performance.</li>
+          <li>Implemented filtering, pagination, and reporting features.</li>
+          <li>Debugged and resolved issues across frontend and backend.</li>
+          <li>Collaborated with clients and teammates to deliver solutions.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
     </div>
   </div>
 </section>
