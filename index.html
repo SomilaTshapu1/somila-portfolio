@@ -176,94 +176,85 @@
   <i class="fa-solid fa-briefcase h1"></i>
   <h3 class="ps-2 py-2 fw-semibold d-inline-block">Work Experience</h3>
 
-  <div class="xp-accordion" id="xpAccordion">
+  <div class="xp-timeline" id="xpTimeline">
 
     <!-- Coega -->
-    <div class="xp-item">
-      <button
-        class="xp-header"
-        type="button"
-        aria-expanded="false"
-      >
-        <div class="xp-title">
-          <h5 class="mb-1">ICT Research Strategy Intern <span class="xp-sub">(Software Developer)</span></h5>
-          <div class="xp-meta">
+    <article class="xp-role">
+      <button class="xp-toggle" type="button" aria-expanded="false">
+        <div class="xp-left">
+          <div class="xp-role-title">ICT Research Strategy Intern <span class="xp-sub">(Software Developer)</span></div>
+          <div class="xp-role-meta">
             <span class="xp-company">Coega Development Corporation</span>
+            <span class="xp-dot">•</span>
             <span class="xp-dates">Mar 2022 – Oct 2022</span>
           </div>
         </div>
 
-        <span class="xp-icon" aria-hidden="true">+</span>
+        <span class="xp-chevron" aria-hidden="true">▾</span>
       </button>
 
-      <div class="xp-body" hidden>
-        <ul class="xp-list">
-          <li>Wrote technical documentation: objectives & scope, ERDs, IPOs, use case diagrams/descriptions, and wireframes.</li>
+      <div class="xp-panel" hidden>
+        <ul class="xp-bullets">
+          <li>Wrote technical documentation: objectives & scope, ERDs, IPOs, use cases, and wireframes.</li>
           <li>Created an AI chatbot using Power Virtual Agents.</li>
-          <li>Managed schedules in Microsoft Project (Gantt charts, milestones, resources, progress tracking).</li>
+          <li>Managed schedules in Microsoft Project (Gantt charts, milestones, resources, tracking).</li>
           <li>Built web features using C# ASP.NET MVC, JavaScript, HTML, and CSS.</li>
           <li>Created and maintained databases using SQL Server.</li>
           <li>Performed testing across projects.</li>
         </ul>
       </div>
-    </div>
+    </article>
 
     <!-- The Code Group -->
-    <div class="xp-item">
-      <button
-        class="xp-header"
-        type="button"
-        aria-expanded="false"
-      >
-        <div class="xp-title">
-          <h5 class="mb-1">Junior Developer</h5>
-          <div class="xp-meta">
+    <article class="xp-role">
+      <button class="xp-toggle" type="button" aria-expanded="false">
+        <div class="xp-left">
+          <div class="xp-role-title">Junior Developer</div>
+          <div class="xp-role-meta">
             <span class="xp-company">The Code Group</span>
+            <span class="xp-dot">•</span>
             <span class="xp-dates">Nov 2022 – Jan 2023</span>
           </div>
         </div>
 
-        <span class="xp-icon" aria-hidden="true">+</span>
+        <span class="xp-chevron" aria-hidden="true">▾</span>
       </button>
 
-      <div class="xp-body" hidden>
-        <ul class="xp-list">
+      <div class="xp-panel" hidden>
+        <ul class="xp-bullets">
           <li>Fixed and resolved bugs across the system to maintain stability.</li>
-          <li>Provided developer support to clients via calls and AnyDesk.</li>
-          <li>Worked with senior developers and BAs to maintain and improve the codebase.</li>
+          <li>Provided client support via calls and AnyDesk demos.</li>
+          <li>Worked with senior devs and BAs to improve the codebase.</li>
         </ul>
       </div>
-    </div>
+    </article>
 
     <!-- ITB Software -->
-    <div class="xp-item">
-      <button
-        class="xp-header"
-        type="button"
-        aria-expanded="true"
-      >
-        <div class="xp-title">
-          <h5 class="mb-1">Software Developer</h5>
-          <div class="xp-meta">
+    <article class="xp-role xp-role--open">
+      <button class="xp-toggle" type="button" aria-expanded="true">
+        <div class="xp-left">
+          <div class="xp-role-title">Software Developer</div>
+          <div class="xp-role-meta">
             <span class="xp-company">ITB Software</span>
+            <span class="xp-dot">•</span>
             <span class="xp-dates">Feb 2023 – Present</span>
           </div>
         </div>
 
-        <span class="xp-icon" aria-hidden="true">−</span>
+        <span class="xp-chevron" aria-hidden="true">▾</span>
       </button>
 
-      <div class="xp-body">
-        <ul class="xp-list">
-          <li>Developed and maintained data-driven web applications using Vue.js and Node.js.</li>
-          <li>Built RESTful APIs and integrated frontend systems with backend services.</li>
-          <li>Designed and optimized PostgreSQL databases for performance.</li>
-          <li>Implemented filtering, pagination, and reporting features.</li>
-          <li>Debugged and resolved issues across frontend and backend.</li>
-          <li>Collaborated with clients and teammates to deliver solutions.</li>
+      <div class="xp-panel">
+        <ul class="xp-bullets">
+          <li>Developed and maintained data-driven web apps using Vue.js and Node.js.</li>
+          <li>Built REST APIs and integrated frontend with backend services.</li>
+          <li>Designed and optimized PostgreSQL databases.</li>
+          <li>Implemented filtering, pagination, and reporting.</li>
+          <li>Debugged issues across frontend and backend.</li>
+          <li>Collaborated with clients and team members to deliver solutions.</li>
         </ul>
       </div>
-    </div>
+    </article>
 
   </div>
 </div>
@@ -670,48 +661,32 @@ Somila is a hardworking, dedicated individual who is able to work independently 
 
 <script>
   (function () {
-    const accordion = document.getElementById('xpAccordion');
-    if (!accordion) return;
+    const root = document.getElementById('xpTimeline');
+    if (!root) return;
 
-    const headers = Array.from(accordion.querySelectorAll('.xp-header'));
+    const toggles = Array.from(root.querySelectorAll('.xp-toggle'));
 
-    function closeItem(header) {
-      const item = header.closest('.xp-item');
-      const body = item.querySelector('.xp-body');
-      const icon = header.querySelector('.xp-icon');
+    function setOpen(toggle, open) {
+      const role = toggle.closest('.xp-role');
+      const panel = role.querySelector('.xp-panel');
 
-      header.setAttribute('aria-expanded', 'false');
-      if (icon) icon.textContent = '+';
-      if (body) body.hidden = true;
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (panel) panel.hidden = !open;
     }
 
-    function openItem(header) {
-      const item = header.closest('.xp-item');
-      const body = item.querySelector('.xp-body');
-      const icon = header.querySelector('.xp-icon');
+    // init based on aria-expanded
+    toggles.forEach(t => setOpen(t, t.getAttribute('aria-expanded') === 'true'));
 
-      header.setAttribute('aria-expanded', 'true');
-      if (icon) icon.textContent = '−';
-      if (body) body.hidden = false;
-    }
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
 
-    headers.forEach((header) => {
-      header.addEventListener('click', () => {
-        const isOpen = header.getAttribute('aria-expanded') === 'true';
+        // close all (single-open)
+        toggles.forEach(t => setOpen(t, false));
 
-        // close all first (single-open behavior)
-        headers.forEach(closeItem);
-
-        // if it was closed, open it
-        if (!isOpen) openItem(header);
+        // open clicked if it was closed
+        if (!isOpen) setOpen(toggle, true);
       });
-    });
-
-    // Ensure initial state (if you set one aria-expanded="true")
-    headers.forEach((header) => {
-      const isOpen = header.getAttribute('aria-expanded') === 'true';
-      if (isOpen) openItem(header);
-      else closeItem(header);
     });
   })();
 </script>
