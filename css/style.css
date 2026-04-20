@@ -15,9 +15,16 @@
   --xp-primary-soft: rgba(254, 218, 21, 0.18);
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    padding-top: 120px; /* matches actual header height */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--dark);
+    height: 100px;
+}
+
+body {
+    padding-top: 100px;
 }
 
 html{
@@ -36,9 +43,7 @@ a{
 a:hover{
     color: #FFFFFF;
 }
-header{
-    background: var(--dark);
-}
+
 .container{
     max-width:1152px;
     padding:0 10px;
