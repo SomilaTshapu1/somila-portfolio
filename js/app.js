@@ -90,5 +90,13 @@ btn.on('click', function(e) {
   $('html, body').animate({scrollTop:0}, '300');
 });
 
+const mainNav = document.getElementById('main-nav');
+
+window.addEventListener('scroll', () => {
+  if (!mainNav) return;
+  if (window.scrollY > 20) mainNav.classList.add('is-stuck');
+  else mainNav.classList.remove('is-stuck');
+});
+
 
 
