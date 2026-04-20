@@ -48,40 +48,58 @@
                 <li><a href="#">Blog</a></li>
             </ul>
         </div>
-        <header>
-            <div class="container">
-               <nav id="main-nav" class="flex items-center justify-between sticky-nav">
-                    <div class="left flex items-center">
-                       
-                        <div>
-                            <a href="#">Home</a>
-                            <a href="#about">About</a>
-                            <a href="#services">Services</a>
-                            <a href="#work">Work</a>
-                            <a href="#blog">Blog</a>
-                        </div>
-                    </div>
-                    
-                </nav>
-                
-                <!-- Back to top button -->
-                <a id="button"></a>
-                
-                <div class="hero flex items-center justify-between">
-                    <div class="left flex-1 flex justify-center">
-                        <img src="./images/DSC_6447.jpg" alt="">
-                    </div>
-                    <div class="right flex-1">
-                        <h6>Somila Tshapu</h6>
-                        <h1>I’m a Software <span>Developer</span></h1>
-                        <p>Hi, I’m a software developer based in South Africa, specializing in Vue.js and modern web development. I build practical, data-driven applications, and I’m currently expanding my skills in AI and automation to create more impactful solutions.</p>
-                        <div>
-                            <button class="btn btn-secondary"><a href="https://drive.google.com/file/d/1BYalTqFe_Cz1qMysiZEBnY4D0YYZJa-h/view?usp=sharing" target="_blank">DOWNLOAD CV</a> </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+<header>
+  <!-- Sticky top bar: desktop nav + mobile hamburger -->
+  <div class="header-bar">
+    <div class="container">
+      <nav id="main-nav" class="flex items-center justify-between" aria-label="Primary">
+        <div class="left flex items-center">
+          <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#work">Work</a>
+            <a href="#blog">Blog</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hamburger (visible on mobile/tablet via CSS) -->
+      <button class="hamberger" type="button" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">
+        <img src="./images/hamberger.svg" alt="">
+      </button>
+    </div>
+  </div>
+
+  <!-- Back to top button (keep it where it was) -->
+  <a id="button"></a>
+
+  <!-- Hero section -->
+  <div class="container">
+    <div class="hero flex items-center justify-between">
+      <div class="left flex-1 flex justify-center">
+        <img src="./images/DSC_6447.jpg" alt="Somila Tshapu">
+      </div>
+
+      <div class="right flex-1">
+        <h6>Somila Tshapu</h6>
+        <h1>I’m a Software <span>Developer</span></h1>
+        <p>
+          Hi, I’m a software developer based in South Africa, specializing in Vue.js and modern web development.
+          I build practical, data-driven applications, and I’m currently expanding my skills in AI and automation
+          to create more impactful solutions.
+        </p>
+        <div>
+          <button class="btn btn-secondary">
+            <a href="https://drive.google.com/file/d/1BYalTqFe_Cz1qMysiZEBnY4D0YYZJa-h/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+              DOWNLOAD CV
+            </a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
         <section id="about" class="about">
             <div class="container flex items-center about-inner-wrap">
