@@ -36,6 +36,9 @@ a:hover{
     color: #FFFFFF;
 }
 header{
+	  position: sticky;
+    top: 0;
+    z-index: 1000;
     background: var(--dark);
 }
 .container{
@@ -94,9 +97,9 @@ header nav .branding{
 .hero .left img{
     width:400px;
 }
-.hero .right{
+/* .hero .right{
     color:var(--pure);
-}
+} */
 .hero .right a{
     color:var(--pure);
     text-decoration: none;
@@ -411,6 +414,7 @@ footer .copyright{
    padding:2rem;
    padding-top:5rem;
    transform: translateX(-100%);
+	transition: transform 0.3s ease;
    -webkit-transform: translateX(-100%);
    -moz-transform: translateX(-100%);
    -ms-transform: translateX(-100%);
@@ -420,6 +424,7 @@ footer .copyright{
    -moz-transition:all .5s ease-in-out;
    -ms-transition:all .5s ease-in-out;
    -o-transition:all .5s ease-in-out;
+	
 }
 .open{
     transform:translateX(0);
@@ -485,18 +490,29 @@ footer .copyright{
 @media (max-width:576px){
     .hero{
         flex-direction: column;
+        text-align: center;
+        padding-top: 6rem;
     }
-    
+
     .hero .right{
-        position: absolute;
-        top:260px;
-        padding:0 1rem;
-        background:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.9));
+          position: static;
+        margin-top: 0;
+        padding: 0 1rem;
+        background: none;
+    }
+	 .hero .right h1{
+        font-size: 2rem;
+    }
+
+    .hero .right p{
+        font-size: 0.95rem;
     }
     .hero .left{
-        margin-top:-5rem;
-        margin-right: -9rem;
-        padding-bottom:4rem;
+        margin: 0;
+        padding-bottom: 2rem;
+    }
+	 .hero .left img{
+        width: 220px;
     }
     .about-inner-wrap{
         flex-direction: column;
@@ -621,29 +637,18 @@ footer .copyright{
     width:100%;
 }
 .testimonial-box{
-    width:500px;
+    width:100%;
+    max-width: 500px;
     box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
     background-color: #ffffff;
     padding: 20px;
     margin: 15px;
     cursor: pointer;
 }
-.profile-img{
-    width:150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 10px;
-}
-.profile-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
 .profile{
-    display: flex;
+  display: flex;
     align-items: center;
+    gap: 10px;
 }
 .name-user{
     display: flex;
