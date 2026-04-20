@@ -17,7 +17,7 @@
 
 body{
     font-family:'Poppins',sans-serif;
-	 padding-top: 80px;
+    padding-top: 120px; /* matches actual header height */
 }
 
 html{
