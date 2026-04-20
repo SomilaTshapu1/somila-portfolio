@@ -24,7 +24,7 @@ times.addEventListener('click', function(){
 //Contact
 const nameEl = document.querySelector("#name");
 const emailEl = document.querySelector("#email");
-const numberEl = document.querySelector("#umber");
+const numberEl = document.querySelector("#contact");
 const companyNameEl = document.querySelector("#company-name");
 const messageEl = document.querySelector("#message");
 
@@ -88,6 +88,15 @@ $(window).scroll(function() {
 btn.on('click', function(e) {
   e.preventDefault();
   $('html, body').animate({scrollTop:0}, '300');
+});
+
+window.addEventListener('scroll', function () {
+  const nav = document.querySelector('header');
+  if (window.scrollY > 50) {
+    nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
 });
 
 
